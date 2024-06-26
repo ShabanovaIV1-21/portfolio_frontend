@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Раздел 2</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+
+            <div class="header__logo">
+                <a href="index.html" class="header__logo-link" target="_blank"><img src="img/logo.svg" alt="Логотип" class="header__logo-pic"></a>
+            </div>
+
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="https://spb-rtk.ru" target="_blank">Наш колледж</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="index.html" target="_blank">Список специальностей</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="student.html" target="_blank">Личный кабинет</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Выход</a>
+                        </li>
+                    </ul>
+                </nav>
+        </div>      
+    </header>
+
+    <main class="main">
+        <h1 class="main__title">Профессиональные достижения, работы, проекты</h1>
+
+        <section class="main__content">
+
+            <div class="main__content-top">
+                <a class="top__href" href="student.html"><- Личный кабинет</a>
+
+            </div>
+            
+            <div class="main__container" id="portfolio">
+                
+                    <form class="main__content-form" method="POST" action="">
+                    <div class="form__container">
+                        <div class="form__items">
+                            <div class="form__column">
+                                <div class="form__item">
+                                    <label class="form__item-title">Название проекта
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="project_name" placeholder="Название проекта" required onchange="checkQu(this)">
+                                        </div>
+                                    </label>
+                                </div>
+            
+                                <div class="form__item">
+                                    <label class="form__item-title">Описание проекта
+                                        <div class="form__item-field">
+                                            <textarea name="description" class="form__item-text" placeholder="Описание проекта" onchange="checkQu(this)"></textarea>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <div class="form__column">
+                                <div class="form__item">
+                                    <label class="form__item-title">Ссылка на работу/проект
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="url" value="" name="link" placeholder="Ссылка">
+                                        </div>
+                                    </label>
+                                </div>
+            
+                                <div class="form__item" >
+                                    <label class="form__item-title">Файл работы/проекта
+                                        <div class="form__item-field file-block">
+                
+                                            <label class="form__item-file">
+                                                <div class="file__label">
+                                                    <div class="input__file-icon">
+                                                        <svg class="file__img">
+                                                            <use xlink:href="img/sprite-icons.svg#file"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="input__file-name">
+                                                        Файл
+                                                    </div>
+                                                </div>
+                                                
+                                                <input class="form__item-input" type="file" value="" name="file" onChange="fileLoad(this)">
+                                            </label>
+                                        </div>
+                                    </label>
+                                </div>
+    
+                            </div>
+                        </div>
+                        
+                        <button class="form__button-delete" type="reset"></button>
+                    </div>
+                    
+                    
+                    <button class="form__button" type="submit">Опубликовать</button>
+                </form>
+                
+                <a href="#" class="add">
+                    <div class="add-button" >
+                        <div class="button__icon">
+                            <svg class="button__icon-img">
+                                <use xlink:href="img/sprite-icons.svg#plus"></use>
+                            </svg>
+                        </div>
+                        <span class="button__text">пункт</span>
+                    </div>
+                </a>
+                
+                <div class="main__content-nav">
+                    <a class="content__nav-link" href="item1.html" id="back">
+                        <- Предыдущий раздел
+                    </a>
+                    <a class="content__nav-link" href="item3.html" id="next">
+                        Следующий раздел ->
+                    </a>
+                </div>
+                </div>
+
+            </div>                
+        </section>
+
+    </main>
+    <script src="scripts/form.js"></script>
+    <script src="scripts/portfolio.js"></script>
+    <script>
+        deleteForm();
+
+        page();
+
+        //When user press button, it adds new form with identical fields for filling out a new section
+        let button = document.querySelector('.add');
+            
+            button.addEventListener('click', function () {
+                let submit = document.querySelector('.form__button');
+                submit.remove();               
+                let div = document.querySelector('form'); 
+                div.innerHTML += `<div class="form__container">
+                        <div class="form__items">
+                            <div class="form__column">
+                                <div class="form__item">
+                                    <label class="form__item-title">Название проекта
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="project_name" placeholder="Название проекта" required onchange="checkQu(this)">
+                                        </div>
+                                    </label>
+                                </div>
+            
+                                <div class="form__item">
+                                    <label class="form__item-title">Описание проекта
+                                        <div class="form__item-field">
+                                            <textarea name="description" class="form__item-text" placeholder="Описание проекта" onchange="checkQu(this)"></textarea>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <div class="form__column">
+                                <div class="form__item">
+                                    <label class="form__item-title">Ссылка на работу/проект
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="url" value="" name="link" placeholder="Ссылка">
+                                        </div>
+                                    </label>
+                                </div>
+            
+                                <div class="form__item" >
+                                    <label class="form__item-title">Файл работы/проекта
+                                        <div class="form__item-field file-block">
+                
+                                            <label class="form__item-file">
+                                                <div class="file__label">
+                                                    <div class="input__file-icon">
+                                                        <svg class="file__img">
+                                                            <use xlink:href="img/sprite-icons.svg#file"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="input__file-name">
+                                                        Файл
+                                                    </div>
+                                                </div>
+                                                
+                                                <input class="form__item-input" type="file" value="" name="file" onChange="fileLoad(this)">
+                                            </label>
+                                        </div>
+                                    </label>
+                                </div>
+    
+                            </div>
+                        </div>
+                        
+                        <button class="form__button-delete" type="reset"></button>
+                    </div>
+                    
+                    
+                    <button class="form__button" type="submit">Опубликовать</button>`;
+                    deleteForm();
+               
+            })
+        
+    </script>
+    
+</body>
+</html>

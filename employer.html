@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+
+            <div class="header__logo">
+                <a href="index.html" class="header__logo-link" target="_blank"><img src="img/logo.svg" alt="Логотип" class="header__logo-pic"></a>
+            </div>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="https://spb-rtk.ru" target="_blank">Наш колледж</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="index.html" target="_blank">Список специальностей</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="employer.html" target="_blank">Личный кабинет</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Выход</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
+    <main class="main">
+        <h1 class="main__title">Личный кабинет</h1>
+        <section class="main__content">
+            <div class="main__container" id="employer">
+                <div class="employer__info">
+                    <div class="employer__info-personal">
+                        <span class="account__info-item">Лаврова</span>
+                        <span class="account__info-item">Анна</span>
+                        <span class="account__info-item">Львовна</span>
+                        <span class="account__info-item">44353</span>
+                        <span class="account__info-item">ukuvalis@collins.com</span>
+                        <span class="account__info-item">+7 (959) 404-94-76</span>
+                    </div>
+                    <div class="employer__info-organization">
+                        <span class="account__info-item">Эльген</span>
+                        <span class="account__info-item">пр. Гоголя, 85</span>
+                        <span class="account__info-item">парикмахерские услуги</span>
+                        <span class="account__info-item"><a href="https://exchanger.ru" target="_blank" class="portfolio__item-link">https://exchanger.ru</a></span>
+                    </div>
+                </div>
+
+                <div class="employer__buttons">
+                    <a href="change_password.html" class="main__content-link">
+                        <div class="button__settings">
+                            <span class="button__settings-desc">Смена пароля</span>
+                            <div class="button__settings-icon">
+                                <svg class="settings__icon-img">
+                                    <use xlink:href="img/sprite-icons.svg#settings"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="saved_portfolio.html" target="_blank" class="main__content-link">
+                        <div class="button__saved">
+                            <span class="button__saved-desc">Список сохраненных портфолио</span>
+                            <div class="button__saved-icon">
+                                <svg class="saved__icon-img">
+                                    <use xlink:href="img/sprite-icons.svg#list"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

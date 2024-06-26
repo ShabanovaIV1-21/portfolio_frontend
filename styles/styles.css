@@ -1,0 +1,15 @@
+@import url('blocks/normalize.css');
+@import url('blocks/base.css');
+@import url('blocks/header.css');
+@import url('blocks/index.css');
+@import url('blocks/authorization.css');
+@import url('blocks/admin.css');
+@import url('blocks/forms.css');
+@import url('blocks/students_list.css');
+@import url('blocks/buttons.css');
+@import url('blocks/list.css');
+@import url('blocks/search.css');
+@import url('blocks/employer.css');
+@import url('blocks/student.css');
+@import url('blocks/account.css');
+@import url('blocks/portfolio.css')

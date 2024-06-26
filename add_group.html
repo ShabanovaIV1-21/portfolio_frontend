@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Создание группы</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+
+            <div class="header__logo">
+                <a href="index.html" class="header__logo-link" target="_blank"><img src="img/logo.svg" alt="Логотип" class="header__logo-pic"></a>
+            </div>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="https://spb-rtk.ru" target="_blank">Наш колледж</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="index.html" target="_blank">Список специальностей</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="admin.html" target="_blank">Личный кабинет</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Выход</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
+    <main class="main">
+        <h1 class="main__title">Создание группы</h1>
+        <section class="main__content">
+            <div class="main__container">
+                <form class="main__content-form" method="POST" action="">
+                    <div class="form__item">
+                        <div class="form__item-field">
+                            <div class="form__item-datalist">
+                                <input class="form__item-input" type="text" value="" onchange="patternCheck(this, patternSpecRus, 'Поле не должно содержать специальные символы')" name="group_name" autocomplete="on" placeholder="Название группы" required>
+                                <select class="form__item-select" onchange="datalist(this)">
+                                    <option value="ИВ1-21">ИВ1-21</option>
+                                    <option value="Н1-21">Н1-21</option>
+                                    <option value="ИВ2-22">ИВ2-22</option>
+                                    <option value="С1-21">С1-21</option>
+                                    <option value="Р1-23">Р1-23</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form__item">
+                        <div class="form__item-field">
+                            <select class="form__item-select" name="course" required>
+                                <option selected value="" disabled>Курс</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                        
+                    
+                    <button class="form__button" type="submit">Создать</button>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+    <script src="scripts/form.js"></script>
+</body>
+</html>

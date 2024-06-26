@@ -1,0 +1,27 @@
+
+.account__info-item {
+    padding-bottom: 1vw;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    
+    
+    .account__info-item {
+        padding-bottom: 2.6vw;
+    }
+
+    
+}
+
+@media screen and (max-width: 480px) {
+    
+    
+    /* .employer__info-item {
+        padding-bottom: 2.6vw;
+    }*/
+    
+}

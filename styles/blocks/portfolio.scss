@@ -1,0 +1,334 @@
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+
+
+.main__container#show_portfolio{
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    @include tablet {
+        flex-direction: column-reverse;
+    }
+}
+
+.portfolio {
+    width: 100%;
+}
+
+// .portfolio__item {
+//     display: grid
+// }
+
+.portfolio__button {
+    width: 48vw;
+    height: 7.4vw;
+    border-radius: 30px;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    // transition: background-color 0.2s ease-out;
+    // &::after {
+    //     transition: background-color 0.2s ease-out;
+    // }
+
+    @include tablet {
+        width: 62vw;
+        height: 18.3vw;
+        border-radius: 25px;
+        margin-bottom: 25px;
+    }
+
+    @include phone {
+        height: 21vw;
+        width: 70vw;
+    }
+}
+
+
+.portfolio__item:not(.portfolio__item_show) .portfolio__item-content {
+    display: none;
+}
+.portfolio__item_show .button__img,
+.portfolio__item_slidedown .button__img {
+  transform: rotate(-180deg);
+}
+
+.portfolio__button-icon {
+    padding:0px 2.5vw;
+    text-align: center;
+    overflow: hidden;
+
+    @include tablet {
+        padding:0px 3.9vw;
+    }
+
+    @include phone {
+        padding:0px 4.375vw;
+    }
+}
+
+.button__img {
+    fill:#1E5DD1;
+    object-fit: fill;
+    width:4vw;
+    height:4vw;
+    transition: transform 0.2s ease-out;
+
+    @include tablet {
+        width:7.8vw;
+        height:7.8vw;
+    }
+
+    @include phone {
+        width:9vw;
+        height:9vw;
+    }
+}
+
+.portfolio__button-desc {
+    font-size: 1.6vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding-left: 2.3vw;
+    text-align: center;
+    width: 100%;
+    color: #292929;
+
+    @include tablet {
+        font-size: 2.6vw;
+        padding-left: 3.9vw;
+    }
+
+    @include phone {
+        font-size: 3.75vw;
+        padding-left: 4.375vw;
+    }
+}
+
+.portfolio__item-content {
+    display: flex;
+    flex-direction: column;
+    // display: none;
+    // justify-self: center;
+    margin-bottom: 50px;
+    // max-height: 0;
+    // overflow:hidden;
+    // transition: max-height 0.2s ease-out;
+
+}
+
+.content__part {
+    display: flex;
+    margin-bottom: 30px;
+
+    @include tablet {
+        flex-direction: column;
+    }
+}
+
+.portfolio__item-column {
+    padding-right: 5vw;
+
+    &#threecolumns {
+        padding-right: 2vw;
+    } 
+
+    &:last-child {
+        padding: 0px;
+    }
+}
+
+// .student__info-title {
+//     @extend .student__info-desc;
+//     padding-right: 3.125vw;
+//     font-weight: 900;
+// }
+
+// .student__info-desc {
+//     display: flex;
+//     flex-direction: column;
+//     font-family: 'Roboto', sans-serif;
+//     max-width: 25vw;
+//     font-size: 1.45vw;
+//     margin-bottom: 2.1vw;
+// }
+
+.portfolio__item-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.portfolio__item-field#item1 {
+    @extend .portfolio__item-field;
+    flex-direction: row;
+    justify-content: space-between;
+    // align-items: baseline;
+}
+.field__title {
+    font-size: 1.25vw;
+    font-family: 'Roboto';
+    font-weight: 900;
+    padding-right: 0px;
+    margin-bottom: 10px;
+
+    @include tablet {
+        font-size: 3.125vw; 
+    }
+
+    @include phone {
+        font-size: 3.75vw;
+    }
+}
+.field__title#item1 {
+    @extend .field__title;
+    margin-bottom: 0px;
+    padding-right: 3vw;
+    
+    @include tablet {
+        width: 30vw;
+    }
+}
+
+.field__input {
+    // height:2.1vw;
+    width: 20vw;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25vw;
+
+    @include tablet {
+        font-size: 3.125vw;
+        width: 65vw;
+        
+    }
+
+    @include phone {
+        font-size: 3.75vw;
+    }
+
+    &#item1 {
+        @include tablet {
+            width: 40vw;
+        }
+    }
+}
+
+.field__smallinput {
+    @extend .field__input;
+    width: 12vw;
+}
+
+.field__text {
+    max-height:12vw;
+    width: 32vw;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25vw;
+    overflow-y: auto;
+
+    scrollbar-width: 0.3em;
+    scrollbar-color: #818181 #D9D9D9;
+    &::-webkit-scrollbar {
+        width: 0.3em;
+        background-color: #D9D9D9;
+        border-radius: 3px;
+    } //— это фон самого скроллбара.
+    // &::-webkit-scrollbar-button {
+    //     // width: 0px;
+    // } //— кнопки направления на полосе прокрутки.
+    // &::-webkit-scrollbar-track {
+
+    // } //— пустое пространство под индикатором прокрутки.
+    &::-webkit-scrollbar-thumb {
+        background-color: #818181;
+        border-radius: 3px;
+    }
+
+    @include tablet {
+        font-size: 3.125vw;
+        width: 65vw;
+        max-height: 36vw;
+    }
+
+    @include phone {
+        font-size: 3.75vw;
+    }
+}
+
+.field__smalltext {
+    @extend .field__text;
+    width: 20vw;
+    min-height: auto;
+    max-height: 5.5vw;
+
+    @include tablet {
+        width: 65vw;
+        min-height: auto;
+        max-height: 18.75vw;
+    }
+}
+
+.portfolio__item-link {
+    color: black;
+    &:hover {
+        text-decoration: underline;
+        color: #1E5DD1;
+    }
+}
+
+.field__file {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7px;
+    // &-pic {
+    //     width: 1.4vw;
+    // height: 1.6vw;
+    // }
+}
+
+
+
+.file__icon {
+    display: flex;
+    width: 1.4vw;
+    height: 1.6vw;
+    
+    @include tablet {
+        width: 3.9vw;
+        height: 4.2vw;
+    }
+
+    @include phone{
+        width: 4.375vw;
+        height: 4.4vw;
+    }
+}
+
+.field__file-text {
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25vw;
+    padding-left: 0.5em;
+
+    @include tablet {
+        font-size: 3.125vw;
+    }
+
+    @include phone {
+        font-size: 3.75vw;
+    }
+}
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Список сохраненных портфолио</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+
+            <div class="header__logo">
+                <a href="https://spb-rtk.ru" class="header__logo-link" target="_blank"><img src="img/logo.svg" alt="Логотип" class="header__logo-pic"></a>
+            </div>
+
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="https://spb-rtk.ru" target="_blank">Наш колледж</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="index.html" target="_blank">Список специальностей</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="" target="_blank">Личный кабинет</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="">Выход</a>
+                        </li>
+                    </ul>
+                </nav>
+        </div>      
+    </header>
+
+    <main class="main">
+        <h1 class="main__title">Список сохраненных портфолио</h1>
+
+        <div class="main__columns">
+
+        <section class="main__content">
+            
+            <div class="main__container">
+                <div class="list">
+
+                    <div class="list__item">
+                        <div class="list__item-info">
+                            
+                                <div class="list__item-fio">
+                                    <span class="surname">Фамилия</span>
+                                    <span class="name">Имя</span>
+                                    <span class="patronymic">Отчество</span>
+                                </div>
+                                
+                            
+
+                            <div class="list__item-group">
+                                Группа
+                            </div>
+                        </div>
+
+                        <div class="list__item-icons">
+                            <div class="list__item-icon" id="delete">
+                                <svg class="icon__pic">
+                                    <use xlink:href="img/sprite-icons.svg#bin"></use>
+                                </svg>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>                
+        </section>
+
+        <search class="main__search" id="portfolio">
+            <form method="GET" action="" class="search__form">
+                <input type="search" class="search__input" placeholder="Найти студента">
+                <button class="search__button" type="submit">
+                    <svg class="search__icon">
+                        <use xlink:href="img/sprite-icons.svg#search"></use>
+                    </svg>
+                </button>
+
+            </form>
+        </search>
+
+    </div>
+    </main>
+    <script src="scripts/list.js"></script>
+    <script>
+        
+    </script>
+    
+</body>
+</html>

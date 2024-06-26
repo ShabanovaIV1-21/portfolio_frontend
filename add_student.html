@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Создание студента</title>
+</head>
+<body>
+    
+        <header class="header">
+            <div class="header__container">
+    
+                <div class="header__logo">
+                    <a href="index.html" class="header__logo-link" target="_blank"><img src="img/logo.svg" alt="Логотип" class="header__logo-pic"></a>
+                </div>
+                    <nav class="header__nav">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="https://spb-rtk.ru" target="_blank">Наш колледж</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="index.html" target="_blank">Список специальностей</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="admin.html" target="_blank">Личный кабинет</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="">Выход</a>
+                            </li>
+                        </ul>
+                    </nav>                
+            </div>      
+        </header>
+
+        <main class="main">
+            <h1 class="main__title">Создание аккаунта студента</h1>
+            <section class="main__content">
+                <div class="main__container">
+                    <form class="main__content-form" method="POST" action="">
+                        <div class="form__item">
+                            <div class="form__item-field">
+                                <input class="form__item-input" type="text" value="" name="surmane" onchange="patternCheck(this, patterRus, 'Поле должно быть заполнено с большой буквы на русском языке')" placeholder="Фамилия" required>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="form__item-field">
+                                <input class="form__item-input" type="text" value="" name="name" onchange="patternCheck(this, patterRus, 'Поле должно быть заполнено с большой буквы на русском языке')" placeholder="Имя" required>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="form__item-field">
+                                <input class="form__item-input" type="text" value="" name="patronymic" onchange="patternCheck(this, patterRus, 'Поле должно быть заполнено с большой буквы на русском языке')" placeholder="Отчество">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="form__item-field">
+                                <select class="form__item-select" name="group" required>
+                                    <option selected value="" disabled>Группа</option>
+                                    <option value="">ИВ1-21</option>
+                                    <option value="">Н1-21</option>
+                                    <option value="">ИВ2-22</option>
+                                    <option value="">С1-21</option>
+                                    <option value="">Р1-23</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="form__item-field">
+                                <input class="form__item-date" type="text" value="" name="birth_date" id="birth_date" placeholder="Дата рождения" required>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="form__item-field">
+                                <input class="form__item-input" type="text" value="" name="login" onchange="patternCheck(this, patternSpecQu, 'Поле не должно содержать специальные символы')" placeholder="Логин" required>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="form__item-field">
+                                <input class="form__item-input" type="text" value="" name="password" onchange="patternCheck(this, patternQu, 'Поле не должно содержать кавычки')" placeholder="Пароль" required>
+                            </div>
+                        </div>
+                        <div class="form__item" >
+                            
+                                <div class="form__item-field file-block">
+        
+                                    <label class="form__item-file">
+                                        <div class="file__label">
+                                            <div class="input__file-icon">
+                                                <svg class="file__img">
+                                                    <use xlink:href="img/sprite-icons.svg#file"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="input__file-name">
+                                                Фотография студента
+                                            </div>
+                                        </div>
+                                        
+                                        <input class="form__item-input" type="file" value="" name="file" name="photo" accept="image/*" onChange="fileLoad(this)">
+                                    </label>
+                                </div>
+                            
+                        </div>
+                        <button class="form__button" type="submit">Создать</button>
+                    </form>
+                </div>
+            </section>
+            
+        </main>
+        <script src="scripts/form.js"></script>
+        <script>
+            //It changes the type of the birth_date field fron text to date
+            let date = document.getElementById('birth_date');
+            date.addEventListener('click', () => {
+                date.setAttribute('type', 'date');
+                date.setAttribute('min', '1900-01-01');
+            });
+
+           
+        </script>
+    
+</body>
+</html>

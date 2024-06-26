@@ -1,0 +1,59 @@
+.employer__info {
+    display:flex;
+    flex-direction: row;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.45vw;
+    margin-bottom: 2.1vw;
+}
+
+.employer__info-personal {
+    display: flex;
+    flex-direction: column;
+    padding-right:30px;
+}
+
+.employer__info-organization {
+    display: flex;
+    flex-direction: column;
+}
+
+.account__info-item {
+    padding-bottom: 1vw;
+}
+
+.main__container#employer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 90px;
+}
+
+
+@media screen and (max-width: 768px) {    
+    .account__info-item {
+        padding-bottom: 2.6vw;
+    }
+
+    .main__container#employer {
+        padding-left: 11.7vw;
+    }
+
+    .employer__info {
+        flex-direction: column-reverse;
+        font-size: 3.125vw;
+        margin-bottom: 2.1vw;
+    }
+}
+
+@media screen and (max-width: 480px) {    
+    /* .employer__info-item {
+        padding-bottom: 2.6vw;
+    }*/
+    .employer__info {
+        /* font-size: 2.5vw;
+        margin-bottom: 1.6vw; */
+        font-size: 3.125vw;
+        margin-bottom: 2.1vw;
+    }
+    
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Создание работодателя</title>
+</head>
+<body>
+    
+        <header class="header">
+            <div class="header__container">
+    
+                <div class="header__logo">
+                    <a href="index.html" target="_blank" class="header__logo-link"><img src="img/logo.svg" alt="Логотип" class="header__logo-pic"></a>
+                </div>
+    
+                <!-- <div class="header__menu"> -->
+                    <nav class="header__nav">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" target="_blank" href="https://spb-rtk.ru">Наш колледж</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" target="_blank" href="index.html">Список специальностей</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" target="_blank" href="admin.html">Личный кабинет</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="">Выход</a>
+                            </li>
+                        </ul>
+                    </nav>                
+            </div>      
+        </header>
+
+        <main class="main">
+            <h1 class="main__title">Создание аккаунта работодателя</h1>
+            <section class="main__content">
+                <div class="main__container">
+                    <form class="main__content-form" method="POST" action="">
+                        <div class="form__container">
+                            <div class="form__items">
+                                <div class="form__column">
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <select class="form__item-select" name="organization_id">
+                                                <option selected value="" disabled>ID</option>
+                                                <option value="">0001</option>
+                                                <option value="">0002</option>
+                                                <option value="">0003</option>
+                                                <option value="">0004</option>
+                                                <option value="">0005</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <div class="form__item-datalist">
+                                                <input class="form__item-input" type="text" value="" name="organization_name" autocomplete="on" onchange="checkQu(this)" placeholder="Название организации" required>
+                                                <select class="form__item-select" onchange="datalist(this)">
+                                                    <option value="Эльген">Эльген</option>
+                                                    <option value="Генайпад">Генайпад</option>
+                                                    <option value="ГенПрайс">ГенПрайс</option>
+                                                    <option value="ЭльБест">ЭльБест</option>
+                                                    <option value="УльтраЧип">УльтраЧип</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <div class="form__item-datalist">
+                                                <input class="form__item-input" type="text" value="" name="address" autocomplete="on" onchange="patternSpecCheckQu(this)" placeholder="Адрес организации" required>
+                                                <select class="form__item-select" onchange="datalist(this)">
+                                                    <option value="пр. Гоголя, 85">пр. Гоголя, 85</option>
+                                                    <option value="спуск Домодедовская, 22">спуск Домодедовская, 22</option>
+                                                    <option value="бульвар Космонавтов, 43">бульвар Космонавтов, 43</option>
+                                                    <option value="бульвар Домодедовская, 39">бульвар Домодедовская, 39</option>
+                                                    <option value="пер. Ленина, 02">пер. Ленина, 02</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+        
+                                </div>
+                                <div class="form__column" id="last">
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="surmane" placeholder="Фамилия" onchange="patternCheck(this, patterRus, 'Поле должно быть заполнено с большой буквы на русском языке')" required>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="name" placeholder="Имя" onchange="patternCheck(this, patterRus, 'Поле должно быть заполнено с большой буквы на русском языке')" required>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="patronymic" onchange="patternCheck(this, patterRus, 'Поле должно быть заполнено с большой буквы на русском языке')"  placeholder="Отчество">
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="tel" value="" name="phone" placeholder="Контактный телефон" data-phone-pattern required >
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="email" value="" name="email" placeholder="Контактный email" required>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="occupation" placeholder="Интересуемая должность" onchange="checkQu(this)" required>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="login" placeholder="Логин" onchange="patternCheck(this, patternSpecQu, 'Поле не должно содержать специальные символы')" required>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__item-field">
+                                            <input class="form__item-input" type="text" value="" name="password" placeholder="Пароль" onchange="patternCheck(this, patternQu, 'Поле не должно содержать кавычки')" required>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <button class="form__button" type="submit">Создать</button>
+                    </form>
+                </div>
+            </section>
+            
+        </main>
+        <script src="scripts/form.js"></script>
+        <script>
+            
+
+        </script>
+    
+</body>
+</html>
